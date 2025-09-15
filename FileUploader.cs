@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System;
 
+namespace OneDriveIntegrityTool
+{
 
 
     public class FileUploader
@@ -32,3 +34,4 @@ using System;
         }
     }
 
+}

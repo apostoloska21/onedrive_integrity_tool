@@ -27,6 +27,15 @@ namespace OneDriveIntegrityTool
 
                 await FileDownloader.DownloadFileAsync("../data/test.txt", "downloaded_test.txt");
                 Console.WriteLine("Download done!");
+
+
+                string originalHash = CalculatorSHA.ComputeSHA256("../data/test.txt");
+                string downloadedHash = CalculatorSHA.ComputeSHA256("downloaded_test.txt");
+
+                Console.WriteLine($"Original SHA-256: {originalHash}");
+                Console.WriteLine($"Downloaded SHA-256: {downloadedHash}");
+                Console.WriteLine($"Integrity check: {(originalHash == downloadedHash ? "PASSED" : "FAILED")}");
+
             }
             catch (Exception ex)
             {
